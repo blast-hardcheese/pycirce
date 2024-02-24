@@ -30,7 +30,7 @@ as well as a kwarg of parameter names to decoders for that particular name.
 ...     name: str
 ...     age: int
 ...
->>> decode_person = decode_object(Person)()
+>>> decode_person = decode_object(Person)(age=int)
 >>> decode_person({"name": "John Smith", "age": "45"})
 Person(name='John Smith', age=45)
 ```
