@@ -41,4 +41,8 @@ def decode_object(decoder: Callable[..., A]) -> Callable[..., Callable[..., A]]:
         func.__name__ = __name__
         return func
 
+    __name__ = f"partially applied decode_object({decoder.__name__})"
+    inner.__name__ = __name__
+    inner.__qualname__ = __name__
+
     return inner
