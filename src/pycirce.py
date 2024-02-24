@@ -18,7 +18,8 @@ def decode_list(decoder: Callable[[Any], A]) -> Callable[[list[Any]], list[A]]:
         except Exception as e:
             raise DecoderException(f"Error while applying {__name__}: {e}") from e
 
-    func.__name__ = "decode_list({})".format(decoder.__name__)
+    func.__qualname__ = __name__  # pylint: disable=W0622
+    func.__name__ = __name__  # pylint: disable=W0622
     return func
 
 
@@ -46,7 +47,8 @@ def decode_object(decoder: Callable[..., A]) -> Callable[..., Callable[..., A]]:
             except Exception as e:
                 raise DecoderException(f"Error while applying {__name__}: {e}") from e
 
-        func.__name__ = __name__
+        func.__qualname__ = __name__  # pylint: disable=W0622
+        func.__name__ = __name__  # pylint: disable=W0622
         return func
 
     __name__ = f"partially applied decode_object({decoder.__name__})"
