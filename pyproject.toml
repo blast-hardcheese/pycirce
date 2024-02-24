@@ -1,0 +1,22 @@
+[project]
+name = "pycirce"
+version = "0.1.0"
+authors = [
+  { name="Devon Stewart", email="blast@hardchee.se" },
+]
+description = "pycirce, a set of combinators for encoding and decoding data"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/blast-hardcheese/pycirce"
+Issues = "https://github.com/blast-hardcheese/pycirce/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
