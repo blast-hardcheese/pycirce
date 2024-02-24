@@ -39,7 +39,7 @@ def decode_object(decoder: Callable[..., A]) -> Callable[..., Callable[..., A]]:
     """
 
     def inner(**fields: Callable[[Any], Any]):
-        __name__ = "decode_object({})".format(decoder.__name__)
+        __name__ = f"decode_object({decoder.__name__})"  # pylint: disable=W0622
 
         def func(obj: dict[str, Any]):
             try:
