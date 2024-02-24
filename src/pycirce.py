@@ -53,6 +53,7 @@ def decode_object(decoder: Callable[..., A]) -> Callable[..., Callable[..., A]]:
         func.__name__ = __name__  # pylint: disable=W0622
         return func
 
+    # pylint: disable=W0622
     __name__ = f"partially applied decode_object({decoder.__name__})"
     inner.__name__ = __name__
     inner.__qualname__ = __name__
