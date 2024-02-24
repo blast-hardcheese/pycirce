@@ -1,3 +1,5 @@
+"""pycirce, a set of combinators for encoding and decoding data"""
+
 from setuptools import find_packages, setup
 
 setup(

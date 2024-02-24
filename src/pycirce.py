@@ -1,3 +1,5 @@
+"""pycirce, a set of combinators for encoding and decoding data"""
+
 from collections.abc import Callable
 from typing import Any, TypeVar
 
